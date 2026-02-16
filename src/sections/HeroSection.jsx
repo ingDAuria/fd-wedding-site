@@ -30,7 +30,7 @@ const HeroSection = () => {
     <Box
       id="home"
       sx={(theme) => ({
-        height: '100vh',
+        height: { xs: 'calc(100vh - 64px)', md: '100vh' },
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -112,11 +112,11 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 0.8 }}
-        style={{ position: 'absolute', bottom: 40, left: 0, right: 0, display: 'flex', justifyContent: 'center' }}
+        style={{ position: 'absolute', bottom: 20, left: 0, right: 0, display: 'flex', justifyContent: 'center' }}
       >
         <Link to="story" smooth={true} duration={800}>
-          <motion.div animate={{ y: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 1.5 }} style={{ cursor: 'pointer' }}>
-            <KeyboardArrowDownIcon sx={{ fontSize: 48, color: 'text.primary', opacity: 0.85 }} />
+            <motion.div animate={{ y: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 1.5 }} style={{ cursor: 'pointer' }}>
+            <KeyboardArrowDownIcon sx={{ fontSize: { xs: 36, md: 48 }, color: 'text.primary', opacity: 0.85 }} />
           </motion.div>
         </Link>
       </motion.div>
