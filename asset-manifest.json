@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.js": "/fd-wedding-site/static/js/main.ce485b80.js",
+    "static/media/lake.png": "/fd-wedding-site/static/media/lake.e51174846c76555e163a.png",
+    "static/media/dress.png": "/fd-wedding-site/static/media/dress.5c8a90c1d0cf54f1924d.png",
+    "static/media/hotel.jpg": "/fd-wedding-site/static/media/hotel.a6a32ac75694ea1cf54a.jpg",
+    "static/media/gift.png": "/fd-wedding-site/static/media/gift.2ddd54ec0e991ab77f31.png",
+    "static/media/logo.png": "/fd-wedding-site/static/media/logo.562439b6cd851f5aa7ca.png",
+    "static/media/separatore.png": "/fd-wedding-site/static/media/separatore.71661febb0c36e8b2274.png",
+    "index.html": "/fd-wedding-site/index.html",
+    "main.ce485b80.js.map": "/fd-wedding-site/static/js/main.ce485b80.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.ce485b80.js"
+  ]
+}
