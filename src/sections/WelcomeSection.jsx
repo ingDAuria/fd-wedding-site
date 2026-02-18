@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container, Grid, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
-import welcomeImg from '../assets/lake.png';
+import welcomeImg from '../assets/welcome.jpeg';
 import WeddingCard from '../components/WeddingCard';
 
 const WelcomeSection = () => {

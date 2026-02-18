@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import SectionHeader from '../components/SectionHeader';
+import { story } from '../content/siteText.jsx';
 
 const StorySection = () => {
   const [ref, inView] = useInView({
@@ -31,28 +32,6 @@ const StorySection = () => {
     }
   };
 
-  const timelineEvents = [
-    {
-      year: '2018',
-      title: 'Il Primo Incontro',
-      description: 'Le nostre strade si sono incrociate in una sera d\'estate a Firenze, sotto le stelle di Piazzale Michelangelo.',
-    },
-    {
-      year: '2020',
-      title: 'La Prima Avventura',
-      description: 'Il nostro primo viaggio insieme a Parigi, dove abbiamo scoperto di essere anime gemelle.',
-    },
-    {
-      year: '2024',
-      title: 'La Proposta',
-      description: 'Sulle rive del Lago di Como, con il tramonto alle spalle, ha detto di sì.',
-    },
-    {
-      year: '2026',
-      title: 'Il Nostro Giorno',
-      description: 'Celebriamo il nostro amore circondati da famiglia e amici.',
-    },
-  ];
 
   return (
     <Box
@@ -91,16 +70,16 @@ const StorySection = () => {
             </motion.div>
 
             <SectionHeader
-              title="La Nostra Storia"
-              subtitle={'"In ogni grande amore c\'è una grande storia"'}
+              title={story.title}
+              subtitle={story.subtitle}
               fadeVariant={fadeInUp}
             />
           </motion.div>
 
           {/* Timeline */}
           <Grid container spacing={4}>
-            {timelineEvents.map((event, index) => (
-              <Grid item xs={12} md={6} key={index}>
+            {story.timeline.map((event, index) => (
+              <Grid item xs={12} md={index === 2 ? 12 : 6} key={index}>
                 <motion.div variants={fadeInUp}>
                   <StoryCard >
                     <Typography

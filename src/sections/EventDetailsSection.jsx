@@ -8,8 +8,10 @@ import RestaurantIcon from '@mui/icons-material/Restaurant';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import WeddingCard from '../components/WeddingCard';
+import { eventDetails } from '../content/siteText.jsx';
 
 const EventDetailsSection = () => {
+
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -17,8 +19,8 @@ const EventDetailsSection = () => {
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
-    visible: {
-      opacity: 1,
+    visible: {  
+      opacity: 1, 
       y: 0,
       transition: { duration: 0.8, ease: 'easeOut' }
     }
@@ -33,26 +35,7 @@ const EventDetailsSection = () => {
       }
     }
   };
-
-  const events = [
-    {
-      icon: <ChurchIcon sx={{ fontSize: 60 }} />,
-      title: 'Cerimonia',
-      time: '15:30',
-      location: 'Basilica di Santa Maria del Fiore',
-      address: 'Piazza del Duomo, Firenze',
-      color: 'secondary.main',
-    },
-    {
-      icon: <RestaurantIcon sx={{ fontSize: 60 }} />,
-      title: 'Ricevimento',
-      time: '18:00',
-      location: 'Villa La Vedetta',
-      address: 'Viale Michelangelo 78, Firenze',
-      color: 'secondary.main',
-    },
-  ];
-
+    
   return (
     <Box
       id="details"
@@ -84,15 +67,15 @@ const EventDetailsSection = () => {
                   mb: 2,
                 }}
               >
-                14 Settembre 2026
+                {eventDetails.date}
               </Typography>
             </motion.div>
-            <SectionHeader title="Dettagli dell'Evento" subtitle={`Sarà un onore condividere con voi questo giorno speciale`} fadeVariant={fadeInUp} />
+            <SectionHeader title={eventDetails.title} subtitle={eventDetails.subtitle} fadeVariant={fadeInUp} />
           </Stack>
 
           {/* Event Cards */}
           <Grid container spacing={4} justifyContent="center">
-            {events.map((event, index) => (
+            {eventDetails.events.map((event, index) => (
               <Grid item xs={12} md={5} key={index}>
                 <motion.div variants={fadeInUp}>
                   <WeddingCard overflow='visible' bg="background.default">

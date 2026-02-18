@@ -1,6 +1,6 @@
 {
     "hero": {
-        "names": "Federico e Daniela",
+        "names": "Federico & Daniela",
         "subtitle": "Celebriamo il nostro amore",
         "date": "14 SETTEMBRE 2026"
     },
@@ -17,9 +17,9 @@
         "subtitle": "\"In ogni grande amore c'è una grande storia\"",
         "timeline": [
             {
-                "year": "2018",
+                "year": "2017",
                 "title": "Il Primo Incontro",
-                "description": "Le nostre strade si sono incrociate in una sera d'estate a Firenze, sotto le stelle di Piazzale Michelangelo."
+                "description": "Ottobre 2017, Università Cattolica di Piacenza.\nCi siamo conosciuti tra lezioni, corridoi e pause caffè… e diciamo la verità: all’inizio non è stato proprio colpo di fulmine.\nNon ci sopportavamo molto.\nCaratteri forti, opinioni diverse, qualche battuta di troppo.\nPoi, quasi senza accorgercene, qualcosa è cambiato.\nUno sguardo in più, una chiacchierata più lunga del solito, una complicità che cresceva giorno dopo giorno.\nDa dicembre 2017 non ci siamo più lasciati.\nE tutto è iniziato proprio lì."
             },
             {
                 "year": "2020",
@@ -27,14 +27,9 @@
                 "description": "Il nostro primo viaggio insieme a Parigi, dove abbiamo scoperto di essere anime gemelle."
             },
             {
-                "year": "2024",
-                "title": "La Proposta",
-                "description": "Sulle rive del Lago di Como, con il tramonto alle spalle, ha detto di s\u00ec."
-            },
-            {
                 "year": "2026",
                 "title": "Il Nostro Giorno",
-                "description": "Celebriamo il nostro amore circondati da famiglia e amici."
+                "description": "Il 14 settembre 2026 sarà il giorno in cui prometteremo di sceglierci per tutta la vita.\nNon vediamo l’ora di condividere con voi sorrisi, emozioni, abbracci e ogni singolo momento di questa giornata così speciale.\nLa vostra presenza sarà il regalo più bello."
             }
         ]
     },
@@ -45,21 +40,21 @@
         "events": [
             {
                 "title": "Cerimonia",
-                "time": "15:30",
-                "location": "Basilica di Santa Maria del Fiore",
-                "address": "Piazza del Duomo, Firenze"
+                "time": "10:30",
+                "location": "Basilica di San Nicolò Lecco",
+                "address": "Vicolo Canonica 4, 23900 Lecco LC"
             },
             {
                 "title": "Ricevimento",
-                "time": "18:00",
-                "location": "Villa La Vedetta",
-                "address": "Viale Michelangelo 78, Firenze"
+                "time": "13:00",
+                "location": " Villa Dolceacqua",
+                "address": "Via per Galbiate 41, 23848 Oggiono LC"
             }
         ]
     },
     "info": {
         "title": "Informazioni Utili",
-        "parking": "Parcheggi consigliati: Parcheggio Santa Maria (10 min a piedi) e Garage Duomo (15 min). Per gli ospiti provenienti da fuori città abbiamo bloccato alcune camere presso Hotel Firenze Centrale — contattateci per i dettagli e tariffe dedicate.",
+        "parking": "Per chi arriverà in auto, sono disponibili tre parcheggi comunali ai piedi della chiesa, con ampia disponibilità di posti. ",
         "howToReach": "La Basilica si trova in Piazza del Duomo. Consigliamo di arrivare almeno 30 minuti prima. Se venite in auto, seguite le indicazioni per il centro storico e lasciate le auto nei parcheggi indicati.",
         "dressCodeTitle": "Dress Code",
         "dressCodeText": "Il dress code \u00e8 \"Elegante/Formale\". Per gli uomini giacca e cravatta; per le donne abiti lunghi o midi eleganti. Vi chiediamo di evitare abiti bianchi per lasciare il bianco agli sposi."
@@ -68,16 +63,16 @@
         "title": "Lista Nozze",
         "subtitle": "Festeggiare con voi sar\u00e0 il dono pi\u00f9 prezioso, ma se desiderate farci un regalo potete farlo qui contribuendo al viaggio pi\u00f9 bello: il prossimo viaggio insieme.",
         "account": {
-            "owner": "Federico Lanza",
-            "bank": "Poste Italiane S.p.A.",
+            "owner": "Federico Lanza Silveri e Daniela Pizzocheri",
+            "bank": "Fideuram",
             "reason": "Regalo di nozze Federico e Daniela da [Nome Cognome invitato]",
-            "iban": "IT60 0000 2811 1010 0000 0000 000"
+            "iban": "IT96V0329601601000065085128"
         },
         "thanks": "Grazie di cuore per il vostro affetto e per rendere questo giorno ancora pi\u00f9 speciale."
     },
     "rsvp": {
         "title": "Conferma la tua Presenza",
-        "subtitle": "La vostra presenza render\u00e0 questo giorno ancora pi\u00f9 speciale. Vi preghiamo di confermare entro il 1\u00b0 Maggio 2026.",
+        "subtitle": "La vostra presenza render\u00e0 questo giorno ancora pi\u00f9 speciale. Vi preghiamo di confermare entro il 30\u00b0 Giugno 2026.",
         "snackbarMessage": "Grazie! Abbiamo ricevuto la tua conferma.",
         "form": {
             "nameLabel": "Nome Completo",
@@ -100,8 +95,8 @@
     "site": {
         "title": "F & D",
         "tagline": "Non vediamo l'ora di celebrare con voi il nostro giorno speciale",
-        "contactEmail": "info@federicoedaniela2026.it",
-        "phone": "+39 123 456 7890",
+        "contactEmail": "federicosilveri@hotmail.it",
+        "phone": "+39 393 246 8718",
         "copyright": "© 2026 Federico & Daniela",
         "madeWith": "Made with",
         "social": {
