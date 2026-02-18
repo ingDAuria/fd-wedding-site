@@ -49,12 +49,30 @@ const RSVPSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulazione invio form
-    setSnackbar({
-      open: true,
-      message: 'Grazie! Abbiamo ricevuto la tua conferma.',
-      severity: 'success',
-    });
+    // Costruisci messaggio WhatsApp a partire dai dati del form
+    const lines = [];
+    lines.push(`Nome: ${formData.name}`);
+    lines.push(`Email: ${formData.email}`);
+    if (formData.phone) lines.push(`Telefono: ${formData.phone}`);
+    lines.push(`Partecipa: ${formData.attendance === 'yes' ? 'Sì' : 'No'}`);
+    lines.push(`Ospiti: ${formData.guests}`);
+    if (formData.dietary) lines.push(`Esigenze alimentari: ${formData.dietary}`);
+    if (formData.message) lines.push(`Messaggio: ${formData.message}`);
+
+    const text = lines.join('\n');
+    // Numero WhatsApp (senza +, prefisso internazionale)
+    const waPhone = '393932468718';
+    const waUrl = `https://api.whatsapp.com/send?phone=${waPhone}&text=${encodeURIComponent(text)}`;
+
+    // Apri WhatsApp Web / App in nuova finestra per inviare il messaggio
+    try {
+      window.open(waUrl, '_blank');
+      setSnackbar({ open: true, message: 'Aperta WhatsApp per invio del messaggio', severity: 'success' });
+    } catch (err) {
+      console.error('Impossibile aprire WhatsApp', err);
+      setSnackbar({ open: true, message: 'Errore durante l\'apertura di WhatsApp', severity: 'error' });
+    }
+
     // Reset form
     setFormData({
       name: '',

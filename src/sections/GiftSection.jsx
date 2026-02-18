@@ -5,7 +5,7 @@ import SectionHeader from '../components/SectionHeader';
 import separatore from '../assets/separatore.png';
 import WeddingCard from '../components/WeddingCard';
 import imgGift from '../assets/gift.png';
-import gift from '../content/siteText';
+import { gift } from '../content/siteText.jsx';
 
 const GiftSection = () => {
     const [copied, setCopied] = useState(false);
@@ -15,7 +15,7 @@ const GiftSection = () => {
     const handleCopy = async (e) => {
         e.preventDefault();
         try {
-            await navigator.clipboard.writeText(gift.iban.replace(/\s+/g, ''));
+            await navigator.clipboard.writeText(gift.account.iban.replace(/\s+/g, ''));
             setCopied(true);
             setTimeout(() => setCopied(false), 2000);
         } catch (err) {
@@ -35,20 +35,26 @@ const GiftSection = () => {
                         <WeddingCard sx={{ bgcolor: 'background.default', width: { xs: '100%', md: '70%' } }}>
                             <Stack sx={{ textAlign: 'center', p: { xs: 3, md: 4 }, my: { xs: 2, md: 4 } }} spacing={2} alignItems="center" justifyContent="center">
                                 <Typography variant="body2" sx={{ fontFamily: '"Playfair Display", serif', fontStyle: 'italic', mb: 1 }}>
-                                    Intestatario: <br /> {gift.intestatario}
+                                    <Box component="span" sx={{ fontWeight: 700 }}>Intestatario:</Box>
+                                    <br /> {gift.account.owner}
                                 </Typography>
 
                                 <Typography variant="body2" sx={{ mb: 2 }}>
-                                    Banca:<br />{gift.banca}
+                                    <Box component="span" sx={{ fontWeight: 700 }}>Banca:</Box>
+                                    <br />{gift.account.bank}
                                 </Typography>
 
                                 <Typography variant="body2" sx={{ mb: 2 }}>
-                                    Causale:<br />{gift.causale}
+                                    <Box component="span" sx={{ fontWeight: 700 }}>Causale:</Box>
+                                    <br />{gift.account.reason}
                                 </Typography>
 
                                 <Stack spacing={1} alignItems="center" justifyContent={'center'} sx={{ mt: 2, textAlign: 'center' }}>
+                                    <Typography variant="body2" sx={{ fontWeight: 700, letterSpacing: '0.04em', fontSize: '0.85rem' }}>
+                                        IBAN:
+                                    </Typography>
                                     <Typography variant="subtitle2" sx={{ fontWeight: 700, letterSpacing: '0.04em', fontSize: '0.9rem' }}>
-                                        {gift.iban}
+                                        {gift.account.iban}
                                     </Typography>
                                     <Button
                                         size="small"

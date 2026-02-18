@@ -3,11 +3,10 @@ import { Box, Typography, Container, IconButton, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import siteText from '../content/siteText.jsx';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import EmailIcon from '@mui/icons-material/Email';
-import site from '../content/siteText.jsx';
+import { site } from '../content/siteText';
 
 const Footer = () => {
   const [ref, inView] = useInView({
