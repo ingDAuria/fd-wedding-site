@@ -55,7 +55,7 @@ const Navigation = () => {
         }}
       >
         <Container maxWidth="lg">
-          <Toolbar sx={{ justifyContent: { xs: 'space-between', md: 'center' }, py: { xs: 0.5, md: 2 }, minHeight: { xs: 56, md: 'auto' } }}>
+          <Toolbar bgcolor="background.paper" color="text.primary" sx={{ justifyContent: { xs: 'space-between', md: 'center' }, py: { xs: 0.5, md: 2 }, minHeight: { xs: 56, md: 'auto' } }}>
 
             {/* Desktop Menu */}
             <Box
@@ -151,8 +151,8 @@ const Navigation = () => {
           display: { xs: 'block', md: 'none' },
           '& .MuiDrawer-paper': {
             width: 280,
-            bgcolor: 'primary.main',
-            color: 'white',
+            bgcolor: 'background.paper',
+            color: 'text.primary',
           },
         }}
       >
@@ -209,11 +209,11 @@ const Navigation = () => {
             fontSize: '2.5rem',
             fontWeight: 700,
             fontStyle: 'italic',
-            color: 'secondary.main',
+            color: 'text.primary',
             opacity: 0.3,
           }}
         >
-          M & G
+          F & D
         </Box>
       </Drawer>
     </>

@@ -16,8 +16,8 @@ const InfoSection = () => {
     return (
         <Grid container
             colSpacing={4}
-            rowSpacing={8}
-            alignItems="stretch"
+            rowSpacing={{ xs: 4, md: 6 }}
+            alignItems="center"
             id="info"
             ref={ref}
             sx={{
