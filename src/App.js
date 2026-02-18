@@ -10,7 +10,7 @@ import InfoSection from './sections/InfoSection';
 import RSVPSection from './sections/RSVPSection';
 import Footer from './components/Footer';
 import GiftSection from './sections/GiftSection';
-import RegistrySection from './sections/RegistrySection';
+// RegistrySection is not used here
 
 function App() {
   return (

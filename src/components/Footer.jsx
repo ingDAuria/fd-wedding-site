@@ -7,6 +7,7 @@ import siteText from '../content/siteText.jsx';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import EmailIcon from '@mui/icons-material/Email';
+import site from '../content/siteText.jsx';
 
 const Footer = () => {
   const [ref, inView] = useInView({
@@ -73,7 +74,7 @@ const Footer = () => {
                     color: 'secondary.main',
                   }}
                 >
-                  {siteText.site.title}
+                  {site.title}
                 </Typography>
               </motion.div>
 
@@ -98,7 +99,7 @@ const Footer = () => {
                     opacity: 0.9,
                   }}
                 >
-                  {siteText.site.tagline}
+                  {site.tagline}
                 </Typography>
               </motion.div>
 
@@ -159,7 +160,7 @@ const Footer = () => {
                     opacity: 0.8,
                   }}
                 >
-                  Per informazioni: {siteText.site.contactEmail}
+                  Per informazioni: {site.contactEmail}
                 </Typography>
                 <Typography
                   variant="body2"
@@ -168,7 +169,7 @@ const Footer = () => {
                     opacity: 0.8,
                   }}
                 >
-                  Tel: {siteText.site.phone}
+                  Tel: {site.phone}
                 </Typography>
               </motion.div>
 
@@ -203,7 +204,7 @@ const Footer = () => {
                       gap: 1,
                     }}
                   >
-                    {siteText.site.madeWith}
+                    {site.madeWith}
                     <FavoriteIcon
                       sx={{
                         fontSize: '1rem',
@@ -215,7 +216,7 @@ const Footer = () => {
                         },
                       }}
                     />
-                    {siteText.site.copyright}
+                    {site.copyright}
                   </Typography>
                 </Box>
               </motion.div>

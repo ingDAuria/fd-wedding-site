@@ -5,19 +5,17 @@ import SectionHeader from '../components/SectionHeader';
 import separatore from '../assets/separatore.png';
 import WeddingCard from '../components/WeddingCard';
 import imgGift from '../assets/gift.png';
+import gift from '../content/siteText';
 
 const GiftSection = () => {
     const [copied, setCopied] = useState(false);
-
-    // Replace this IBAN with the real one
-    const IBAN = 'IT60 0000 2811 1010 0000 0000 000';
 
     const fadeIn = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 
     const handleCopy = async (e) => {
         e.preventDefault();
         try {
-            await navigator.clipboard.writeText(IBAN.replace(/\s+/g, ''));
+            await navigator.clipboard.writeText(gift.iban.replace(/\s+/g, ''));
             setCopied(true);
             setTimeout(() => setCopied(false), 2000);
         } catch (err) {
@@ -37,20 +35,20 @@ const GiftSection = () => {
                         <WeddingCard sx={{ bgcolor: 'background.default', width: { xs: '100%', md: '70%' } }}>
                             <Stack sx={{ textAlign: 'center', p: { xs: 3, md: 4 }, my: { xs: 2, md: 4 } }} spacing={2} alignItems="center" justifyContent="center">
                                 <Typography variant="body2" sx={{ fontFamily: '"Playfair Display", serif', fontStyle: 'italic', mb: 1 }}>
-                                    Intestatario: <br /> Federico Lanza
+                                    Intestatario: <br /> {gift.intestatario}
                                 </Typography>
 
                                 <Typography variant="body2" sx={{ mb: 2 }}>
-                                    Banca:<br />Poste Italiane S.p.A.
+                                    Banca:<br />{gift.banca}
                                 </Typography>
 
                                 <Typography variant="body2" sx={{ mb: 2 }}>
-                                    Causale:<br />Regalo di nozze Federico e Daniela da<br />[Nome Cognome invitato]
+                                    Causale:<br />{gift.causale}
                                 </Typography>
 
                                 <Stack spacing={1} alignItems="center" justifyContent={'center'} sx={{ mt: 2, textAlign: 'center' }}>
                                     <Typography variant="subtitle2" sx={{ fontWeight: 700, letterSpacing: '0.04em', fontSize: '0.9rem' }}>
-                                        {IBAN}
+                                        {gift.iban}
                                     </Typography>
                                     <Button
                                         size="small"

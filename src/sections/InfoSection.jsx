@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Grid, Typography, Stack } from '@mui/material';
+import { Box, Grid, Typography, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import SectionHeader from '../components/SectionHeader';
@@ -9,7 +9,7 @@ import img3 from '../assets/church.jpeg';
 import { info } from '../content/siteText.jsx';
 
 const InfoSection = () => {
-    const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
+    const [ref] = useInView({ threshold: 0.2, triggerOnce: true });
 
     const fadeIn = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Box, Typography, Container } from '@mui/material';
 import { motion } from 'framer-motion';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { Link } from 'react-scroll';
+import Countdown from '../components/Countdown';
 import  logo from '../assets/logo.png';
 
 const HeroSection = () => {
@@ -97,6 +96,8 @@ const HeroSection = () => {
               </Typography>
             </motion.div>
 
+            {/* Countdown */}
+             <Countdown />
             {/* Bottom decoration */}
             <motion.div variants={fadeInUp}>
               <Box sx={{ width: 80, height: 1, bgcolor: 'secondary.main', opacity: 0.9, margin: '0 auto 40px' }} />
@@ -107,19 +108,7 @@ const HeroSection = () => {
         </motion.div>
       </Container>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 0.8 }}
-        style={{ position: 'absolute', bottom: 20, left: 0, right: 0, display: 'flex', justifyContent: 'center' }}
-      >
-        <Link to="story" smooth={true} duration={800}>
-            <motion.div animate={{ y: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 1.5 }} style={{ cursor: 'pointer' }}>
-            <KeyboardArrowDownIcon sx={{ fontSize: { xs: 36, md: 48 }, color: 'text.primary', opacity: 0.85 }} />
-          </motion.div>
-        </Link>
-      </motion.div>
+
     </Box>
   );
 };

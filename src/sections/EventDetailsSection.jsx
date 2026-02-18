@@ -1,10 +1,9 @@
 import React from 'react';
-import { Box, Typography, Container, Grid, Card, CardContent, Stack } from '@mui/material';
+import { Box, Typography, Container, Grid, CardContent, Stack } from '@mui/material';
 import SectionHeader from '../components/SectionHeader';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import ChurchIcon from '@mui/icons-material/Church';
-import RestaurantIcon from '@mui/icons-material/Restaurant';
+// ChurchIcon and RestaurantIcon are provided via content icons; not used here
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import WeddingCard from '../components/WeddingCard';
