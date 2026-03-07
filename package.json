@@ -14,7 +14,7 @@
     "react-intersection-observer": "^10.0.2",
     "react-scroll": "^1.9.0"
   },
-  "homepage": "https://ingDAuria.github.io/fd-wedding-site",
+  "homepage": "https://www.federicoedanielawedding.it",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
