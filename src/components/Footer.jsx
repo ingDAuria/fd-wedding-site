@@ -1,11 +1,9 @@
 import React from 'react';
-import { Box, Typography, Container, IconButton, Grid } from '@mui/material';
+import { Box, Typography, Container, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import EmailIcon from '@mui/icons-material/Email';
+import InfoIcon from '@mui/icons-material/Info';
 import { site } from '../content/siteText';
 
 const Footer = () => {
@@ -16,8 +14,8 @@ const Footer = () => {
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.8, ease: 'easeOut' }
     }
@@ -71,6 +69,7 @@ const Footer = () => {
                     fontStyle: 'italic',
                     mb: 2,
                     color: 'secondary.main',
+                    textAlign: 'center',
                   }}
                 >
                   {site.title}
@@ -96,76 +95,35 @@ const Footer = () => {
                     maxWidth: 600,
                     margin: '0 auto 40px',
                     opacity: 0.9,
+                    textAlign: 'center',
                   }}
                 >
                   {site.tagline}
                 </Typography>
               </motion.div>
 
-              {/* Social Icons */}
-              <motion.div variants={fadeInUp}>
-                <Box sx={{ mb: 4 }}>
-                  <IconButton
-                    sx={{
-                      color: 'secondary.main',
-                      mx: 1,
-                      transition: 'transform 0.3s ease',
-                      '&:hover': {
-                        transform: 'translateY(-5px)',
-                        color: 'secondary.light',
-                      },
-                    }}
-                    aria-label="Instagram"
-                  >
-                    <InstagramIcon fontSize="large" />
-                  </IconButton>
-                  <IconButton
-                    sx={{
-                      color: 'secondary.main',
-                      mx: 1,
-                      transition: 'transform 0.3s ease',
-                      '&:hover': {
-                        transform: 'translateY(-5px)',
-                        color: 'secondary.light',
-                      },
-                    }}
-                    aria-label="Facebook"
-                  >
-                    <FacebookIcon fontSize="large" />
-                  </IconButton>
-                  <IconButton
-                    sx={{
-                      color: 'secondary.main',
-                      mx: 1,
-                      transition: 'transform 0.3s ease',
-                      '&:hover': {
-                        transform: 'translateY(-5px)',
-                        color: 'secondary.light',
-                      },
-                    }}
-                    aria-label="Email"
-                  >
-                    <EmailIcon fontSize="large" />
-                  </IconButton>
-                </Box>
-              </motion.div>
+              {/* Social icons removed as requested */}
+              <InfoIcon sx={{ color: 'secondary.main' }} />
 
               {/* Contact Info */}
               <motion.div variants={fadeInUp}>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    mb: 1,
-                    opacity: 0.8,
-                  }}
-                >
-                  Per informazioni: {site.contactEmail}
-                </Typography>
+                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1, mb: 1 }}>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      opacity: 0.8,
+                      textAlign: 'center',
+                    }}
+                  >
+                    Per informazioni: {site.contactEmail}
+                  </Typography>
+                </Box>
                 <Typography
                   variant="body2"
                   sx={{
                     mb: 3,
                     opacity: 0.8,
+                    textAlign: 'center',
                   }}
                 >
                   Tel: {site.phone}

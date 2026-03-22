@@ -17,12 +17,12 @@ const SectionHeader = ({ title, subtitle, variant = 'h2', fadeVariant }) => {
       </Box>
 
             {subtitle && (
-        <Box sx={{ maxWidth: 700, margin: '12px auto 0' }}>
-          <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-            {subtitle}
-          </Typography>
-        </Box>
-      )}
+              <Box sx={{ maxWidth: 700, margin: '12px auto 0', textAlign: 'center' }}>
+                <Typography variant="body1" sx={{ color: 'text.secondary', textAlign: 'center' }}>
+                  {subtitle}
+                </Typography>
+              </Box>
+            )}
     </Box>
   );
 };

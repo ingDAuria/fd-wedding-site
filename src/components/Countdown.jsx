@@ -36,8 +36,8 @@ const Countdown = ({ target = '2026-09-14' }) => {
     return () => clearInterval(iv);
   }, [targetDate]);
   const card = (value, label) => (
-    <Box sx={{ width: { xs: 72, md: 96 }, bgcolor: 'background.paper', borderRadius: 2, p: { xs: 1, md: 2 }, boxShadow: '0 8px 30px rgba(0,0,0,0.12)', textAlign: 'center', border: '1px solid', borderColor: 'divider' }}>
-      <Typography sx={{ fontSize: { xs: '1.25rem', md: '1.6rem' }, fontWeight: 800, fontFamily: 'Playfair Display, serif', color: 'primary.main' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: { xs: 72, md: 96 }, bgcolor: 'background.paper', borderRadius: 2, p: { xs: 1, md: 2 }, boxShadow: '0 8px 30px rgba(0,0,0,0.12)', border: '1px solid', borderColor: 'divider' }}>
+      <Typography sx={{ fontSize: { xs: '1.25rem', md: '1.6rem' }, fontWeight: 800, fontFamily: 'Playfair Display, serif', color: 'text.primary' }}>
         {value}
       </Typography>
       <Typography sx={{ fontSize: '0.65rem', color: 'text.secondary', mt: 0.5 }}>{label}</Typography>

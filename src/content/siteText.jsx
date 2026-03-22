@@ -89,13 +89,13 @@ Per tutti gli invitati sarà possibile parcheggiare direttamente all’interno d
     },
     dressCode: {
         title: "Dress Code",
-        description: "Il dress code \u00e8 \"Elegante/Formale\". Per gli uomini giacca e cravatta; per le donne abiti lunghi o midi eleganti. Vi chiediamo di evitare abiti bianchi per lasciare il bianco agli sposi."
+        description: "Il dress code \u00e8 \"Elegante/Formale\". Per gli uomini giacca e cravatta; per le donne abiti lunghi o midi eleganti. Vi chiediamo di evitare abiti bianchi per lasciare il bianco alla sposa."
     }
 };
 
 export const gift = {
     title: "Lista Nozze",
-    subtitle: "Festeggiare con voi sarà il dono più prezioso, ma se desiderate farci un regalo potete farlo qui contribuendo al viaggio più bello: il prossimo viaggio insieme.",
+    subtitle: " La vostra presenza è il dono più prezioso. Se desiderate farci un pensiero, sarà apprezzato un contributo per la nostra vita insieme.",
     account: {
         owner: "Federico Lanza Silveri e Daniela Pizzocheri",
         bank: "Fideuram",
@@ -107,7 +107,7 @@ export const gift = {
 
 export const rsvp = {
     title: "Conferma la tua Presenza",
-    subtitle: "La vostra presenza renderà questo giorno ancora più speciale. Vi preghiamo di confermare entro il 30° Giugno 2026.",
+    subtitle: "La vostra presenza renderà questo giorno ancora più speciale. Vi preghiamo di confermare entro il 30 Giugno 2026.",
     snackbarMessage: "Grazie! Abbiamo ricevuto la tua conferma.",
     form: {
         nameLabel: "Nome Completo",

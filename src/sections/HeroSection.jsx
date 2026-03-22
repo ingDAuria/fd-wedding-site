@@ -48,6 +48,8 @@ const HeroSection = () => {
           background: 'none',
           pointerEvents: 'none',
         },
+        // per-section mobile padding
+        px: { xs: 2, md: 0 },
       })}
     >
       <Container maxWidth="lg">
@@ -65,7 +67,7 @@ const HeroSection = () => {
                 src={logo}
                 alt="logo"
                 sx={{
-                  width: { xs: 180, md: 240 },
+                  width: { xs: 220, md: 300 },
                   height: 'auto',
                   mb: 2,
                   display: 'block',
@@ -91,7 +93,7 @@ const HeroSection = () => {
 
             {/* Date */}
             <motion.div variants={fadeInUp}>
-              <Typography sx={{ fontSize: { xs: '1.25rem', md: '1.5rem' }, color: 'text.primary', fontWeight: 600, mb: 5, fontFamily: '"Lato", sans-serif', letterSpacing: '0.15em' }}>
+              <Typography sx={{ fontSize: { xs: '1.25rem', md: '1.5rem' }, color: 'text.primary', fontWeight: 600, mb: 5, fontFamily: '"Lato", sans-serif', letterSpacing: '0.15em', textAlign: 'center' }}>
                 14 SETTEMBRE 2026
               </Typography>
             </motion.div>

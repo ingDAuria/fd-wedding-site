@@ -42,6 +42,7 @@ const StorySection = () => {
         display: 'flex',
         alignItems: 'center',
         py: { xs: 8, md: 12 },
+        px: { xs: 2, md: 0 },
         position: 'relative',
         overflow: 'hidden',
       }}

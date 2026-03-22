@@ -39,7 +39,7 @@ const InfoSection = () => {
                 <motion.div variants={fadeIn}>
                     <Stack>
                         <Typography variant="h5" sx={{ mb: 1 }}>{info.info1.title}</Typography>
-                        <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2 }}>
+                        <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2, px: { xs: 2, md: 4 } }}>
                             {info.info1.description}
                         </Typography>
                     </Stack>
@@ -74,7 +74,7 @@ const InfoSection = () => {
                 <motion.div variants={fadeIn}>
                     <Stack>
                         <Typography variant="h6" sx={{ mt: 2, mb: 1 }}>{info.info2.title}</Typography>
-                        <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+                        <Typography variant="body1" sx={{ color: 'text.secondary', px: { xs: 2, md: 4 } }}>
                             {info.info2.description}
                         </Typography>
                     </Stack>
@@ -85,7 +85,7 @@ const InfoSection = () => {
                 <motion.div variants={fadeIn}>
                     <Stack>
                         <Typography variant="h5" sx={{ mb: 1 }}>{info.dressCode.title}</Typography>
-                        <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+                        <Typography variant="body1" sx={{ color: 'text.secondary', px: { xs: 2, md: 4 } }}>
                             {info.dressCode.description}
                         </Typography>
                     </Stack>

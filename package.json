@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-wedding-site",
+  "name": "daniela-federicos-wedding-site",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -14,7 +14,7 @@
     "react-intersection-observer": "^10.0.2",
     "react-scroll": "^1.9.0"
   },
-  "homepage": "https://www.federicoedanielawedding.it",
+  "homepage": "https://www.danielafedericowedding.it",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

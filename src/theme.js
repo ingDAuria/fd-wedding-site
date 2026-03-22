@@ -145,6 +145,26 @@ const theme = createTheme({
         },
       },
     },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          '& .MuiOutlinedInput-notchedOutline': {
+            border: 'none',
+          },
+          '&:hover .MuiOutlinedInput-notchedOutline': {
+            border: 'none',
+          },
+          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+            border: 'none',
+          },
+          '&.Mui-disabled .MuiOutlinedInput-notchedOutline': {
+            border: 'none',
+          },
+          boxShadow: 'none',
+        },
+      },
+    },
+    
   },
   shape: {
     borderRadius: 12,
@@ -185,6 +205,39 @@ theme.components = {
         minHeight: '100vh',
         backgroundColor: baseBg,
         backgroundImage: subtleGradient,
+      },
+      p: {
+        textAlign: 'justify',
+      },
+    },
+  },
+  MuiRadio: {
+    styleOverrides: {
+      root: {
+        '&.Mui-checked': {
+          color: theme.palette.secondary.main,
+        },
+      },
+    },
+  },
+  MuiFormControlLabel: {
+    styleOverrides: {
+      root: {
+        '& .MuiRadio-root.Mui-checked + .MuiFormControlLabel-label': {
+          color: theme.palette.secondary.main,
+        },
+      },
+      label: {
+        color: theme.palette.text.secondary,
+      },
+    },
+  },
+  MuiInputLabel: {
+    styleOverrides: {
+      root: {
+        '&.Mui-focused': {
+          color: theme.palette.secondary.main,
+        },
       },
     },
   },

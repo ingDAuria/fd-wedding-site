@@ -46,6 +46,7 @@ const EventDetailsSection = () => {
         py: { xs: 8, md: 12 },
         position: 'relative',
         bgcolor: '#f5ead0',
+        px: { xs: 2, md: 0 },
       }}
     >
       <Container maxWidth="lg">
@@ -73,7 +74,7 @@ const EventDetailsSection = () => {
           </Stack>
 
           {/* Event Cards */}
-          <Grid container spacing={4} justifyContent="center">
+          <Grid container spacing={4} justifyContent="center" sx={{ rowGap: { xs: 6, md: 4 } }}>
             {eventDetails.events.map((event, index) => (
               <Grid item xs={12} md={5} key={index}>
                 <motion.div variants={fadeInUp}>
@@ -153,6 +154,7 @@ const EventDetailsSection = () => {
                           sx={{
                             mb: 1,
                             fontSize: { xs: '1.25rem', md: '1.5rem' },
+                            textAlign: 'center',
                           }}
                         >
                           {event.location}
@@ -161,6 +163,7 @@ const EventDetailsSection = () => {
                           variant="body1"
                           sx={{
                             color: 'text.secondary',
+                            textAlign: 'center',
                           }}
                         >
                           {event.address}

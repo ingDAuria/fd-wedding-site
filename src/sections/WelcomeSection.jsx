@@ -14,12 +14,13 @@ const WelcomeSection = () => {
         alignItems: 'center',
         py: { xs: 6, md: 10 },
         bgcolor: 'background.default',
+        px: { xs: 2, md: 0 },
       }}
     >
       <Container maxWidth="lg">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <Grid container spacing={6} alignItems="center">
-            <Grid item xs={12} md={6} sx={{ textAlign: { xs: 'center', md: 'left' } }}>
+            <Grid item xs={12} md={6} sx={{ textAlign: { md: 'left' } }}>
               <Typography variant="h2" gutterBottom sx={{ fontWeight: 700 }}>
                 Benvenuti
               </Typography>

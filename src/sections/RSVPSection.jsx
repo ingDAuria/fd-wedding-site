@@ -117,6 +117,7 @@ const RSVPSection = () => {
         display: 'flex',
         alignItems: 'center',
         py: { xs: 8, md: 12 },
+        px: { xs: 2, md: 0 },
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -154,9 +155,11 @@ const RSVPSection = () => {
               component="form"
               onSubmit={handleSubmit}
               sx={{
-                bgcolor: 'white',
+                bgcolor: 'background.paper',
+                borderRadius: 2,
                 p: { xs: 3, md: 5 },
                 boxShadow: '0 8px 30px rgba(0,0,0,0.08)',
+                overflow: 'hidden',
               }}
             >
               <Grid container spacing={3}>
@@ -170,6 +173,7 @@ const RSVPSection = () => {
                     value={formData.name}
                     onChange={handleChange}
                     variant="outlined"
+                    sx={{ backgroundColor: 'background.default', borderRadius: 2 }}
                   />
                 </Grid>
 
@@ -184,6 +188,7 @@ const RSVPSection = () => {
                     value={formData.email}
                     onChange={handleChange}
                     variant="outlined"
+                    sx={{ backgroundColor: 'background.default', borderRadius: 2 }}
                   />
                 </Grid>
                 <Grid item xs={12} md={6}>
@@ -194,6 +199,7 @@ const RSVPSection = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     variant="outlined"
+                    sx={{ backgroundColor: 'background.default', borderRadius: 2 }}
                   />
                 </Grid>
 
@@ -211,6 +217,7 @@ const RSVPSection = () => {
                       native: true,
                     }}
                     variant="outlined"
+                    sx={{ backgroundColor: 'background.default', borderRadius: 2 }}
                   >
                     {[1, 2, 3, 4, 5].map((num) => (
                       <option key={num} value={num}>
@@ -241,13 +248,21 @@ const RSVPSection = () => {
                     >
                       <FormControlLabel
                         value="yes"
-                        control={<Radio sx={{ color: 'accent.main' }} />}
+                        control={<Radio sx={{ '&.Mui-checked': { color: 'secondary.main' } }} />}
                         label="Sì, sarò presente"
+                        sx={{
+                          '& .MuiFormControlLabel-label': { color: 'text.primary' },
+                          '& .MuiRadio-root.Mui-checked + .MuiFormControlLabel-label': { color: 'secondary.main' },
+                        }}
                       />
                       <FormControlLabel
                         value="no"
-                        control={<Radio />}
+                        control={<Radio sx={{ '&.Mui-checked': { color: 'secondary.main' } }} />}
                         label="Non posso partecipare"
+                        sx={{
+                          '& .MuiFormControlLabel-label': { color: 'text.primary' },
+                          '& .MuiRadio-root.Mui-checked + .MuiFormControlLabel-label': { color: 'secondary.main' },
+                        }}
                       />
                     </RadioGroup>
                   </FormControl>
@@ -264,6 +279,7 @@ const RSVPSection = () => {
                       onChange={handleChange}
                       variant="outlined"
                       placeholder="Es: Vegetariano, Celiaco, Allergie..."
+                      sx={{ backgroundColor: 'background.default', borderRadius: 2 }}
                     />
                   </Grid>
                 )}
@@ -280,6 +296,7 @@ const RSVPSection = () => {
                     onChange={handleChange}
                     variant="outlined"
                     placeholder="Lasciaci un messaggio o un augurio speciale..."
+                    sx={{ backgroundColor: 'background.default', borderRadius: 2 }}
                   />
                 </Grid>
 
@@ -295,6 +312,14 @@ const RSVPSection = () => {
                     sx={{
                       py: 1.5,
                       fontSize: '1.1rem',
+                      color: 'common.white',
+                      backgroundColor: 'secondary.main',
+                      transition: 'all 0.25s ease',
+                      '&:hover': {
+                        backgroundColor: 'secondary.dark',
+                        color: 'common.white',
+                        boxShadow: '0 8px 30px rgba(0,0,0,0.12)',
+                      },
                     }}
                   >
                     Invia Conferma

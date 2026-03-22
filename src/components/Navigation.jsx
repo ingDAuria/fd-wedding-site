@@ -124,16 +124,18 @@ const Navigation = () => {
               onClick={handleDrawerToggle}
               sx={{
                 display: { xs: 'flex', md: 'none' },
-                color: 'text.primary',
                 width: 40,
                 height: 40,
                 borderRadius: '50%',
                 alignItems: 'center',
                 justifyContent: 'center',
-                bgcolor: 'transparent',
                 border: 'none',
                 boxShadow: 'none',
-                '&:hover': { bgcolor: 'transparent' },
+                // when not scrolled (i.e., over hero/content) give a subtle circular translucent background
+                bgcolor: scrolled ? 'transparent' : 'rgba(255,255,255,0.6)',
+                color: 'text.primary',
+                backdropFilter: scrolled ? 'none' : 'blur(4px)',
+                '&:hover': { bgcolor: scrolled ? 'transparent' : 'rgba(255,255,255,0.75)' },
               }}
             >
               <MenuIcon />
