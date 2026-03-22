@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider, CssBaseline, Box } from '@mui/material';
-import theme from './theme';
+import theme from './theme/theme';
 import Navigation from './components/Navigation';
 import HeroSection from './sections/HeroSection';
 import StorySection from './sections/StorySection';
@@ -24,7 +24,7 @@ function App() {
       >
         <Navigation />
         <HeroSection />
-                <WelcomeSection />
+        <WelcomeSection />
         <StorySection />
         <EventDetailsSection />
         <InfoSection />

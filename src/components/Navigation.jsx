@@ -52,6 +52,7 @@ const Navigation = () => {
           backdropFilter: { xs: 'none', md: scrolled ? 'blur(6px)' : 'none' },
           transition: 'all 0.3s ease',
           borderBottom: 'none',
+          height: { xs: 56 },
         }}
       >
         <Container maxWidth="lg">
