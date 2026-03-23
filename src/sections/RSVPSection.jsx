@@ -17,10 +17,12 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import SendIcon from '@mui/icons-material/Send';
 import SectionHeader from '../components/SectionHeader';
+import rsvp from '../content/siteText.jsx';
+import { animationVariants } from '../utils/animations';
 
 const RSVPSection = () => {
   const [ref, inView] = useInView({
-    threshold: 0.3,
+    threshold: 0.2,
     triggerOnce: true,
   });
 
@@ -89,25 +91,6 @@ const RSVPSection = () => {
     setSnackbar({ ...snackbar, open: false });
   };
 
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 60 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' }
-    }
-  };
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      }
-    }
-  };
-
   return (
     <Box
       id="rsvp"
@@ -140,17 +123,17 @@ const RSVPSection = () => {
         <motion.div
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          variants={staggerContainer}
+          variants={animationVariants.staggerContainer}
         >
           {/* Header */}
           <SectionHeader
-            title="Conferma la tua Presenza"
-            subtitle={'La vostra presenza renderà questo giorno ancora più speciale. Vi preghiamo di confermare entro il 1° Maggio 2026.'}
-            fadeVariant={fadeInUp}
+            title={rsvp.rsvp.title}
+            subtitle={rsvp.rsvp.subtitle}
+            fadeVariant={animationVariants.fadeInUp}
           />
 
           {/* Form */}
-          <motion.div variants={fadeInUp}>
+          <motion.div variants={animationVariants.fadeInUp}>
             <Box
               component="form"
               onSubmit={handleSubmit}

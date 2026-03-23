@@ -6,22 +6,6 @@ import { useRef, useEffect, useState } from 'react';
  */
 
 /**
- * Custom hook per intersection observer con framer-motion
- * @param {Object} options - Opzioni di configurazione
- * @returns {Array} [ref, isInView]
- */
-export const useInView = (options = {}) => {
-  const ref = useRef(null);
-  const isInView = useFramerInView(ref, {
-    once: true,
-    margin: '-100px',
-    ...options,
-  });
-
-  return [ref, isInView];
-};
-
-/**
  * Hook per gestire la posizione dello scroll
  * @returns {number} Posizione dello scroll in pixel
  */
@@ -95,35 +79,35 @@ export const animationVariants = {
 
   fadeInUp: {
     hidden: { opacity: 0, y: 60 },
-    visible: {
-      opacity: 1,
+    visible: { 
+      opacity: 1, 
       y: 0,
       transition: transitions.smooth
     }
   },
-
+  
   fadeInDown: {
     hidden: { opacity: 0, y: -60 },
-    visible: {
-      opacity: 1,
+    visible: { 
+      opacity: 1, 
       y: 0,
       transition: transitions.smooth
     }
   },
-
+  
   fadeInLeft: {
     hidden: { opacity: 0, x: -60 },
-    visible: {
-      opacity: 1,
+    visible: { 
+      opacity: 1, 
       x: 0,
       transition: transitions.smooth
     }
   },
-
+  
   fadeInRight: {
     hidden: { opacity: 0, x: 60 },
-    visible: {
-      opacity: 1,
+    visible: { 
+      opacity: 1, 
       x: 0,
       transition: transitions.smooth
     }
@@ -132,11 +116,11 @@ export const animationVariants = {
   /**
    * SCALE ANIMATIONS
    */
-
+  
   fadeInScale: {
     hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
+    visible: { 
+      opacity: 1, 
       scale: 1,
       transition: transitions.smooth
     }
@@ -161,8 +145,8 @@ export const animationVariants = {
   pulse: {
     visible: {
       scale: [1, 1.05, 1],
-      transition: {
-        duration: 2,
+      transition: { 
+        duration: 2, 
         repeat: Infinity,
         ease: 'easeInOut'
       }
@@ -175,15 +159,15 @@ export const animationVariants = {
 
   slideInLeft: {
     hidden: { x: '-100vw' },
-    visible: {
+    visible: { 
       x: 0,
       transition: transitions.spring
     }
   },
-
+  
   slideInRight: {
     hidden: { x: '100vw' },
-    visible: {
+    visible: { 
       x: 0,
       transition: transitions.spring
     }
@@ -325,8 +309,8 @@ export const animationVariants = {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0
+        staggerChildren: 0.2,
+        delayChildren: 0.1
       }
     }
   },
@@ -382,7 +366,7 @@ export const animationVariants = {
 
   hoverGlow: {
     initial: { boxShadow: '0px 0px 0px rgba(0,0,0,0)' },
-    hover: { boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.15)', transition: transitions.quick }
+    hover: { boxShadow: '0px 10px 30px rgba(0,0,0,0.2)', transition: transitions.quick }
   },
 
   /**
@@ -478,8 +462,8 @@ export const animationPresets = {
    */
   heroTitle: {
     hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
+    visible: { 
+      opacity: 1, 
       y: 0,
       transition: { duration: 1, ease: 'easeOut' }
     }

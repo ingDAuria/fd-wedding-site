@@ -3,35 +3,24 @@ import { Box, Typography, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import Countdown from '../components/Countdown';
 import logo from '../assets/logo.png';
+import { animationVariants, useInView } from '../utils/animations';
 
 const HeroSection = () => {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 60 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
-    },
-  };
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
-      },
-    },
-  };
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
 
   return (
     <Stack
       id="home"
+      ref={ref}
       spacing={2}
       sx={(theme) => ({
         pt: '56px',
-        minHeight: 'calc(100vh - 56px)', // Adjust for AppBar height
+        pb: '56px',
+        minHeight: '100vh', // Adjust for AppBar height
+        maxWidth: 'lg',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-end',
@@ -42,7 +31,11 @@ const HeroSection = () => {
 
 
       {/* Logo from public assets */}
-      <motion.div variants={fadeInUp}>
+      <motion.div
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={animationVariants.fadeInUp}
+      >
         <Box
           component="img"
           src={logo}
@@ -57,31 +50,49 @@ const HeroSection = () => {
         />
       </motion.div>
 
-        {/* Names */}
-        <motion.div variants={fadeInUp}>
-          <Typography variant="h1" sx={{ textAlign: 'center', color: 'text.primary', fontStyle: 'italic', fontFamily: '"Playfair Display", serif' }}>
-            Federico e Daniela
-          </Typography>
-        </motion.div>
+      {/* Names */}
+      <motion.div
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={animationVariants.fadeInUp}
+      >
+        <Typography variant="h1" sx={{ textAlign: 'center', color: 'text.primary', fontStyle: 'italic', fontFamily: '"Playfair Display", serif' }}>
+          Daniela & Federico
+        </Typography>
+      </motion.div>
 
-        {/* Subtitle */}
-        <motion.div variants={fadeInUp}>
-          <Typography variant="h4" sx={{ textAlign: 'center', fontWeight: 300, color: 'text.primary', fontFamily: '"Lato", sans-serif' }}>
-            Celebriamo il nostro amore
-          </Typography>
-        </motion.div>
+      {/* Subtitle */}
+      <motion.div
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={animationVariants.fadeInUp}
+      >
+        <Typography variant="h4" sx={{ textAlign: 'center', fontWeight: 300, color: 'text.primary', fontFamily: '"Lato", sans-serif' }}>
+          Celebriamo il nostro amore
+        </Typography>
+      </motion.div>
 
-        {/* Date */}
-        <motion.div variants={fadeInUp}>
-          <Typography sx={{ fontSize: { xs: '1.25rem', md: '1.5rem' }, color: 'text.primary', fontWeight: 600, fontFamily: '"Lato", sans-serif', letterSpacing: '0.15em', textAlign: 'center' }}>
-            14 SETTEMBRE 2026
-          </Typography>
-        </motion.div>
+      {/* Date */}
+      <motion.div
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={animationVariants.fadeInUp}
+      >
+        <Typography sx={{ fontSize: { xs: '1.25rem', md: '1.5rem' }, color: 'text.primary', fontWeight: 600, fontFamily: '"Lato", sans-serif', letterSpacing: '0.15em', textAlign: 'center' }}>
+          14 SETTEMBRE 2026
+        </Typography>
+      </motion.div>
 
-        {/* Countdown */}
+      {/* Countdown */}
+      <motion.div
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={animationVariants.fadeInScale}
+      >
         <Countdown />
-        {/* Bottom decoration */}
-      </Stack>
+      </motion.div>
+      {/* Bottom decoration */}
+    </Stack>
 
   );
 };

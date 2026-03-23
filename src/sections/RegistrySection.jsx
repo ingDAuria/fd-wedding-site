@@ -12,8 +12,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
  */
 const RegistrySection = () => {
   const [ref, inView] = useInView({
-    threshold: 0.3,
-    triggerOnce: true,
+        threshold: 0.02,
   });
 
   const fadeInUp = {

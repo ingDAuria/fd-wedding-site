@@ -12,10 +12,6 @@ const StoryCard = ({ children, borderColor }) => {
         transition: 'transform 0.25s ease, box-shadow 0.25s ease',
         borderLeft: '4px solid',
         borderColor: borderColor || 'secondary.main',
-        '&:hover': {
-          transform: 'translateX(10px)',
-          boxShadow: '0 18px 40px rgba(0,0,0,0.14)',
-        },
       }}
     >
       {children}

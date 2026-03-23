@@ -34,9 +34,9 @@ Da dicembre 2017 non ci siamo più lasciati.
 E tutto è iniziato proprio lì.`,
         },
         {
-            year: "2020",
+            year: "2025",
             title: "Proposta",
-            description: `Parigi, la città tanto amata da Daniela.
+            description: `Settembre 2025, Parigi, la città tanto amata da Daniela.
 Una cena romantica al ristorante Les Ombres, con la Tour Eiffel illuminata davanti a noi.
 Tra luci, emozione e qualche battito di cuore accelerato, Federico ha fatto la domanda più importante della sua vita.
 E Daniela ha detto sì.
@@ -53,7 +53,7 @@ La vostra presenza sarà il regalo più bello.`,
 };
 
 export const eventDetails = {
-    dateHeading: "14 Settembre 2026",
+    date: "14 Settembre 2026",
     title: "Dettagli dell'Evento",
     subtitle: "Sarà un onore condividere con voi questo giorno speciale",
     events: [
@@ -77,19 +77,16 @@ export const eventDetails = {
 export const info = {
 
     info1: {
-        title: "Basilica di San Nicolò (Lecco)",
-        description: `Per chi arriverà in auto, sono disponibili tre parcheggi comunali ai piedi della chiesa, con ampia disponibilità di posti.
-Al termine della cerimonia ci sarà il tradizionale lancio del riso.
-Successivamente, saremo accompagnati a piedi fino al lago, dove saliremo su una barca per scattare le nostre foto sullo sfondo del meraviglioso panorama lecchese.`,
+        title: "Basilica di San Nicolò",
+        description: `Per chi arriverà in auto, sono disponibili tre parcheggi comunali ai piedi della chiesa, con ampia disponibilità di posti. Al termine della cerimonia ci sarà il tradizionale lancio del riso. Successivamente, ci accompagnerete a piedi fino al lago, dove saliremo su una barca per scattare le nostre foto sullo sfondo del meraviglioso panorama lecchese.`,
     },
     info2: {
         title: "Villa Dolceacqua",
-        description: `Una splendida villa immersa nel verde, affacciata sul lago, che farà da cornice alla nostra festa.
-Per tutti gli invitati sarà possibile parcheggiare direttamente all’interno della villa, dove sono disponibili posti auto sufficienti.`,
+        description: `Dopo il rito, saranno pronti ad accogliervi in una splendida villa immersa nel verde, affacciata sul lago, che farà da cornice alla nostra festa. Per tutti gli invitati sarà possibile parcheggiare direttamente all’interno della villa, dove sono disponibili posti auto sufficienti.`,
     },
     dressCode: {
         title: "Dress Code",
-        description: "Il dress code \u00e8 \"Elegante/Formale\". Per gli uomini giacca e cravatta; per le donne abiti lunghi o midi eleganti. Vi chiediamo di evitare abiti bianchi per lasciare il bianco alla sposa."
+        description: "Il dress code è \"Elegante/Formale\". Per gli uomini giacca e cravatta; per le donne abiti lunghi o midi eleganti. Vi chiediamo gentilmente di evitare abiti bianchi, riservati alla sposa."
     }
 };
 
@@ -130,7 +127,7 @@ export const registry = {
 };
 
 export const site = {
-    title: "F & D",
+    title: "D & F",
     tagline: "Non vediamo l'ora di celebrare con voi il nostro giorno speciale",
     contactEmail: "federicosilveri@hotmail.it",
     phone: "+39 393 246 8718",

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider, CssBaseline, Box } from '@mui/material';
+import { ThemeProvider, CssBaseline, Stack } from '@mui/material';
 import theme from './theme/theme';
 import Navigation from './components/Navigation';
 import HeroSection from './sections/HeroSection';
@@ -16,10 +16,14 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box
+      <Stack
         sx={{
+          width: '100%',
+          margin: '0 auto',
           overflowX: 'hidden',
           scrollBehavior: 'smooth',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
         <Navigation />
@@ -31,7 +35,7 @@ function App() {
         <GiftSection />
         <RSVPSection />
         <Footer />
-      </Box>
+      </Stack>
     </ThemeProvider>
   );
 }

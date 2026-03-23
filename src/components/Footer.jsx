@@ -37,6 +37,7 @@ const Footer = () => {
       sx={{
         py: 8,
         color: 'white',
+        width: '100%',
         position: 'relative',
         overflow: 'hidden',
         '&::before': {
@@ -51,7 +52,6 @@ const Footer = () => {
         },
       }}
     >
-      <Container maxWidth="lg">
         <motion.div
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -180,7 +180,6 @@ const Footer = () => {
             </Grid>
           </Grid>
         </motion.div>
-      </Container>
     </Box>
   );
 };

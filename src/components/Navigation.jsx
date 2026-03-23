@@ -25,7 +25,7 @@ const Navigation = () => {
     { label: 'La Nostra Storia', to: 'story' },
     { label: 'Benvenuti', to: 'welcome' },
     { label: 'Dettagli', to: 'details' },
-    { label: 'Lista Nozze', to: 'registry' },
+    { label: 'Lista Nozze', to: 'gift' },
     { label: 'RSVP', to: 'rsvp' },
   ];
 
@@ -216,7 +216,7 @@ const Navigation = () => {
             opacity: 0.3,
           }}
         >
-          F & D
+          D & F
         </Box>
       </Drawer>
     </>

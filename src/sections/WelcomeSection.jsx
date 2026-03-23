@@ -1,26 +1,34 @@
 import React from 'react';
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Stack, Grid, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
-import welcomeImg from '../assets/welcome.jpeg';
-import WeddingCard from '../components/WeddingCard';
+import welcomeImg from '../assets/welcome.png';
+import { animationVariants, useInView } from '../utils/animations';
 
 const WelcomeSection = () => {
+  const [ref, inView] = useInView({
+        threshold: 0.02,
+  });
+
   return (
     <Box
       id="welcome"
+      ref={ref}
+      p={{ xs: 4, md: 8 }}
       sx={{
-        minHeight: '80vh',
-        display: 'flex',
-        alignItems: 'center',
-        py: { xs: 6, md: 10 },
-        bgcolor: 'background.default',
-        px: { xs: 2, md: 0 },
+        minHeight: '100vh',
+        maxWidth: 'lg',
       }}
     >
-      <Container maxWidth="lg">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <Grid container spacing={6} alignItems="center">
-            <Grid item xs={12} md={6} sx={{ textAlign: { md: 'left' } }}>
+      <motion.div
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={animationVariants.staggerContainer}
+      >
+        <Grid container spacing={6} alignItems="center">
+
+          <Grid item xs={12} md={6} width={'100%'} sx={{ textAlign: { xs: 'center', md: 'left' } }}>
+            <motion.div variants={animationVariants.fadeInUp}>
+              <Stack spacing={2} alignItems={{ xs: 'center', md: 'flex-start' }}>
               <Typography variant="h2" gutterBottom sx={{ fontWeight: 700 }}>
                 Benvenuti
               </Typography>
@@ -36,16 +44,31 @@ const WelcomeSection = () => {
               <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
                 Non vediamo l’ora di vedervi!
               </Typography>
-            </Grid>
+            </Stack>            </motion.div>          </Grid>
 
-            <Grid item xs={12} md={6}>
-              <Box sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'flex-end' } }}>
-                <WeddingCard imageSrc={welcomeImg} imageAlt="Benvenuti" />
+          <Grid item xs={12} md={6} width="100%" >
+            <motion.div variants={animationVariants.fadeInScale}>
+              <Box sx={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: { xs: 'center', md: 'center' }
+              }}>
+                <Box
+                  component="img"
+                  src={welcomeImg}
+                  alt="Benvenuti"
+                  sx={{ 
+                    width: '100%', 
+                    display: 'block', 
+                    objectFit: 'cover'
+                   }}
+                />
               </Box>
-            </Grid>
+            </motion.div>
           </Grid>
-        </motion.div>
-      </Container>
+
+        </Grid>
+      </motion.div>
     </Box>
   );
 };

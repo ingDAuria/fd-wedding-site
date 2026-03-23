@@ -1,63 +1,39 @@
-import React from 'react';
-import { Box, Typography, Container, Grid, CardContent, Stack } from '@mui/material';
+import { Box, Typography, Grid, Stack } from '@mui/material';
 import SectionHeader from '../components/SectionHeader';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-// ChurchIcon and RestaurantIcon are provided via content icons; not used here
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import WeddingCard from '../components/WeddingCard';
+import EventCard from '../components/EventCard';
 import { eventDetails } from '../content/siteText.jsx';
+import { animationVariants } from '../utils/animations';
 
 const EventDetailsSection = () => {
 
   const [ref, inView] = useInView({
-    threshold: 0.3,
+    threshold: 0.2,
     triggerOnce: true,
   });
 
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 60 },
-    visible: {  
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' }
-    }
-  };
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      }
-    }
-  };
-    
   return (
     <Box
       id="details"
       ref={ref}
+      p={{ xs: 4, md: 8 }}
       sx={{
         minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        py: { xs: 8, md: 12 },
-        position: 'relative',
+        width: '100%',
         bgcolor: '#f5ead0',
-        px: { xs: 2, md: 0 },
       }}
     >
-      <Container maxWidth="lg">
+      <Box sx={{ maxWidth: 'lg', width: '100%', margin: '0 auto' }}>
         <motion.div
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          variants={staggerContainer}
+          variants={animationVariants.staggerContainer}
+          width='100%'
         >
           {/* Header */}
           <Stack mb={8} alignItems="center" textAlign="center">
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={animationVariants.fadeInUp}>
               <Typography
                 sx={{
                   fontSize: { xs: '2rem', md: '3rem' },
@@ -70,107 +46,31 @@ const EventDetailsSection = () => {
                 {eventDetails.date}
               </Typography>
             </motion.div>
-            <SectionHeader title={eventDetails.title} subtitle={eventDetails.subtitle} fadeVariant={fadeInUp} />
+            <SectionHeader title={eventDetails.title} subtitle={eventDetails.subtitle} fadeVariant={animationVariants.fadeInUp} />
           </Stack>
 
           {/* Event Cards */}
-          <Grid container spacing={4} justifyContent="center" sx={{ rowGap: { xs: 6, md: 4 } }}>
+          <Grid
+            container
+            spacing={{ xs: 8, md: 8 }}
+            width='100%'
+            justifyContent="center"
+            alignItems="flex-start"
+            sx={{ mb: 4 }}
+          >
             {eventDetails.events.map((event, index) => (
-              <Grid item xs={12} md={5} key={index}>
-                <motion.div variants={fadeInUp}>
-                  <WeddingCard overflow='visible' bg="background.default">
-                    {/* Icon Badge */}
-                    <Box
-                      sx={{
-                        position: 'absolute',
-                        top: -30,
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        width: 100,
-                        height: 100,
-                        borderRadius: '50%',
-                        bgcolor: event.color,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: 'white',
-                        boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
-                      }}
-                    >
-                      {event.icon}
-                    </Box>
-
-                    <CardContent sx={{ pt: 10, pb: 4, textAlign: 'center' }}>
-                      <Typography
-                        variant="h3"
-                        sx={{
-                          mb: 3,
-                          fontSize: { xs: '2rem', md: '2.5rem' },
-                        }}
-                      >
-                        {event.title}
-                      </Typography>
-
-                      {/* Time */}
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          my: 5,
-                        }}
-                      >
-                        <AccessTimeIcon
-                          sx={{
-                            mr: 1,
-                            color: event.color,
-                          }}
-                        />
-                        <Typography
-                          variant="h4"
-                          sx={{
-                            fontSize: { xs: '1.5rem', md: '2rem' },
-                            fontWeight: 600,
-                            color: event.color,
-                          }}
-                        >
-                          {event.time}
-                        </Typography>
-                        
-                      </Box>
-
-
-
-                      {/* Location */}
-                      <Box sx={{ mb: 2 }}>
-                        <LocationOnIcon
-                          sx={{
-                            color: 'text.secondary',
-                            mb: 1,
-                          }}
-                        />
-                        <Typography
-                          variant="h4"
-                          sx={{
-                            mb: 1,
-                            fontSize: { xs: '1.25rem', md: '1.5rem' },
-                            textAlign: 'center',
-                          }}
-                        >
-                          {event.location}
-                        </Typography>
-                        <Typography
-                          variant="body1"
-                          sx={{
-                            color: 'text.secondary',
-                            textAlign: 'center',
-                          }}
-                        >
-                          {event.address}
-                        </Typography>
-                      </Box>
-                    </CardContent>
-                  </WeddingCard>
+              <Grid item xs={12} md={5} key={index} sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                <motion.div variants={animationVariants.fadeInUp} style={{ width: '100%' }}>
+                  <EventCard 
+                  overflow='visible' 
+                  bg="background.default"
+                  icon= {event.icon}
+                  title ={event.title}
+                  time={event.time}
+                  location={event.location}
+                  address={event.address}
+                  color='blur(6px)'
+                  />
                 </motion.div>
               </Grid>
             ))}
@@ -178,7 +78,7 @@ const EventDetailsSection = () => {
 
 
         </motion.div>
-      </Container>
+      </Box>
     </Box>
   );
 };
